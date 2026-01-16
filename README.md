@@ -1,3 +1,3 @@
-- Nom:
-- Prénom:
-- URL vercel: 
+- Nom: Chouhib-Forster
+- Prénom: Yanis
+- URL vercel: http://localhost:4321/
