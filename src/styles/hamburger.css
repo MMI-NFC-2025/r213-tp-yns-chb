@@ -1,0 +1,46 @@
+/* Simple hamburger menu styles for Header.astro */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger span {
+    height: 4px;
+    width: 100%;
+    background: #003366;
+    margin: 3px 0;
+    border-radius: 2px;
+    transition: 0.4s;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        padding: 1rem;
+        border-radius: 8px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}

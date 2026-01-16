@@ -1,3 +1,3 @@
 - Nom: Chouhib-Forster
 - Prénom: Yanis
-- URL vercel: http://localhost:4321/
+- url netlify : https://silly-banoffee-1d053a.netlify.app/
