@@ -1,26 +1,44 @@
-
-
-<nav class="relative w-full bg-blue-900 text-white px-4 py-2 flex items-center justify-between">
-    <div class="text-xl font-bold">Agence Bidiboudain</div>
-    <button id="hamburger-menu" class="flex flex-col justify-center items-center w-8 h-8 md:hidden focus:outline-none" aria-label="Ouvrir le menu" tabindex="0">
-        <span class="block w-8 h-1 bg-white rounded-sm mb-1 transition-all"></span>
-        <span class="block w-8 h-1 bg-white rounded-sm mb-1 transition-all"></span>
+<nav
+    class="relative w-full bg-[#b8005c] text-white px-4 py-2 flex items-center justify-between"
+>
+    <div class="text-xl font-bold">Agence immobilière</div>
+    <button
+        id="hamburger-menu"
+        class="flex flex-col justify-center items-center w-8 h-8 md:hidden focus:outline-none"
+        aria-label="Ouvrir le menu"
+        tabindex="0"
+    >
+        <span class="block w-8 h-1 bg-white rounded-sm mb-1 transition-all"
+        ></span>
+        <span class="block w-8 h-1 bg-white rounded-sm mb-1 transition-all"
+        ></span>
         <span class="block w-8 h-1 bg-white rounded-sm transition-all"></span>
     </button>
-    <div id="nav-links" class="hidden flex-col absolute top-full right-4 bg-white text-blue-900 shadow-lg rounded-lg mt-2 py-2 px-4 space-y-2 md:space-y-0 md:static md:flex md:flex-row md:bg-transparent md:text-white md:shadow-none md:rounded-none md:mt-0 md:py-0 md:px-0 md:space-x-6">
-        <a href="/" class="block px-2 py-1 rounded hover:bg-blue-100 md:hover:bg-blue-800 md:hover:text-yellow-300 transition-colors">Accueil</a>
-        <a href="/offres" class="block px-2 py-1 rounded hover:bg-blue-100 md:hover:bg-blue-800 md:hover:text-yellow-300 transition-colors">Offres</a>
+    <div
+        id="nav-links"
+        class="hidden flex-col absolute top-full right-4 bg-white text-blue-900 shadow-lg rounded-lg mt-2 py-2 px-4 space-y-2 md:space-y-0 md:static md:flex md:flex-row md:bg-transparent md:text-white md:shadow-none md:rounded-none md:mt-0 md:py-0 md:px-0 md:space-x-6"
+    >
+        <a
+            href="/"
+            class="block px-2 py-1 rounded hover:bg-blue-100 md:hover:bg-blue-800 md:hover:text-yellow-300 transition-colors"
+            >Accueil</a
+        >
+        <a
+            href="/offres"
+            class="block px-2 py-1 rounded hover:bg-blue-100 md:hover:bg-blue-800 md:hover:text-yellow-300 transition-colors"
+            >Offres</a
+        >
     </div>
 </nav>
 <script is:inline>
-    const hamburger = document.getElementById('hamburger-menu');
-    const navLinks = document.getElementById('nav-links');
-    hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('hidden');
+    const hamburger = document.getElementById("hamburger-menu");
+    const navLinks = document.getElementById("nav-links");
+    hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("hidden");
     });
-    hamburger.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            navLinks.classList.toggle('hidden');
+    hamburger.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            navLinks.classList.toggle("hidden");
         }
     });
 </script>
