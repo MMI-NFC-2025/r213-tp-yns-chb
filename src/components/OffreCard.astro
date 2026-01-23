@@ -1,14 +1,15 @@
 ---
 const { offre } = Astro.props;
+let isFavori = offre.favori;
 ---
 
 <div
     class="offre-card offre"
-    data-favori={offre.favori.toString()}
-    style="border:1px solid #ddd; border-radius:10px; box-shadow:0 2px 8px #0001; padding:1rem; margin:1rem; max-width:320px; background:#fff; display:flex; flex-direction:column; align-items:center;"
+    data-favori={isFavori.toString()}
+    style={`border:1px solid #ddd; border-radius:10px; box-shadow:0 2px 8px #0001; padding:1rem; margin:1rem; max-width:320px; display:flex; flex-direction:column; align-items:center; background:${isFavori ? "#ffe6ef" : "#fff"}; transition:background 0.3s;`}
 >
     <img
-        src={offre.imgUrl}
+        src={`/src/assets/images/${offre.imgUrl.replace(".png", ".avif")}`}
         alt={offre.nomMaison}
         style="width:100%; max-width:200px; border-radius:8px; margin-bottom:1rem;"
     />
@@ -19,5 +20,12 @@ const { offre } = Astro.props;
     <p style="margin:0.2rem 0;">
         Chambres : {offre.nbChambres} | Sdb : {offre.nbSdb}
     </p>
-    {offre.favori && <span style="color:red; font-size:1.2rem;">★ Favori</span>}
+    {isFavori && <span style="color:red; font-size:1.2rem;">★ Favori</span>}
+    <button
+        type="button"
+        style="margin-top:1rem; padding:0.5rem 1rem; border-radius:6px; border:none; background:#b8005c; color:white; cursor:pointer;"
+        onclick="this.parentElement.style.background = this.parentElement.dataset.favori === 'true' ? '#fff' : '#ffe6ef'; this.parentElement.dataset.favori = this.parentElement.dataset.favori === 'true' ? 'false' : 'true';"
+    >
+        Ajouter au favoris
+    </button>
 </div>
