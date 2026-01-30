@@ -1,6 +1,7 @@
 ---
 const { offre } = Astro.props;
 let isFavori = offre.Favoris;
+import PbImage from "./PbImage.astro";
 ---
 
 <div
@@ -8,6 +9,8 @@ let isFavori = offre.Favoris;
     data-favori={isFavori.toString()}
     style={`border:1px solid #ddd; border-radius:10px; box-shadow:0 2px 8px #0001; padding:1rem; margin:1rem; max-width:320px; display:flex; flex-direction:column; align-items:center; background:${isFavori ? "#e3e8ff" : "#fff"}; transition:background 0.3s;`}
 >
+    <PbImage record={offre} recordImage={offre.image[0]} />
+
     <h2 style="margin:0.5rem 0; font-size:1.3rem;">{offre.nomMaison}</h2>
     <p style="margin:0.2rem 0; color:#666;">{offre.Adresse}</p>
     <p style="margin:0.2rem 0; font-weight:bold; color:#2a7;">{offre.Prix} €</p>
