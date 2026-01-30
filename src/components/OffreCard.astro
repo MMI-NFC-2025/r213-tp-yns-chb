@@ -12,18 +12,9 @@ import PbImage from "./PbImage.astro";
     <PbImage record={offre} recordImage={offre.image[0]} />
 
     <h2 style="margin:0.5rem 0; font-size:1.3rem;">{offre.nomMaison}</h2>
-    <p style="margin:0.2rem 0; color:#666;">{offre.Adresse}</p>
-    <p style="margin:0.2rem 0; font-weight:bold; color:#2a7;">{offre.Prix} €</p>
-    <p style="margin:0.2rem 0;">Surface : {offre.Superficie} m²</p>
-    <p style="margin:0.2rem 0;">
-        Chambres : {offre.NbChambres} | Sdb : {offre.NbSdb}
-    </p>
 
-    <button
-        type="button"
-        style="margin-top:1rem; padding:0.5rem 1rem; border-radius:6px; border:none; background:#070782; color:white; cursor:pointer;"
-        onclick="this.parentElement.style.background = this.parentElement.dataset.favori === 'true' ? '#fff' : '#e3e8ff'; this.parentElement.dataset.favori = this.parentElement.dataset.favori === 'true' ? 'false' : 'true';"
-    >
-        Ajouter au favoris
-    </button>
+
+   
 </div>
+
+
