@@ -7,34 +7,50 @@ const offres = await getOffres();
 ---
 
 <Layout titre="Offres">
-    <h1>Offres</h1>
-    <button id="favori-button" class="bg-slate-600 rounded-lg text-white p-2"
-        >Afficher les favoris</button
-    >
-    <a
-        href="/offres/surface/80"
-        class="bg-blue-600 rounded-lg text-white p-2 inline-block mb-4"
-    >
-        Maisons supérieures à 80 m²
-    </a>
-    <a
-        href="/offres/prix/600000"
-        class="bg-green-600 rounded-lg text-white p-2 inline-block mb-4 ml-4"
-    >
-        Maisons inférieur à 600 000 €
-    </a>
-    <a
-        href="/offres/prix-range/700000-4000000"
-        class="bg-yellow-600 rounded-lg text-white p-2 inline-block mb-4 ml-4"
-    >
-        Maisons entre 700 000 et 4 000 000 €
-    </a>
-    <div
-        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center"
-    >
-        {offres.map((offre) => <OffreCard offre={offre} class="offre" />)}
+    <div class="max-w-7xl mx-auto px-4 py-8">
+        <!-- En-tête -->
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold text-slate-800 mb-4">Nos Offres</h1>
+            <p class="text-lg text-slate-600">
+                Découvrez notre sélection de maisons
+            </p>
+        </div>
+
+        <!-- Filtres -->
+        <div class="mb-8 flex flex-wrap gap-4">
+            <button
+                id="favori-button"
+                class="bg-slate-600 hover:bg-slate-700 rounded-lg text-white px-6 py-3 font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+                Afficher les favoris
+            </button>
+            <a
+                href="/offres/surface/80"
+                class="bg-blue-600 hover:bg-blue-700 rounded-lg text-white px-6 py-3 font-semibold transition-all duration-300 shadow-md hover:shadow-lg inline-block"
+            >
+                Maisons supérieures à 80 m²
+            </a>
+            <a
+                href="/offres/prix/600000"
+                class="bg-green-600 hover:bg-green-700 rounded-lg text-white px-6 py-3 font-semibold transition-all duration-300 shadow-md hover:shadow-lg inline-block"
+            >
+                Maisons inférieur à 600 000 €
+            </a>
+            <a
+                href="/offres/prix-range/700000-4000000"
+                class="bg-yellow-600 hover:bg-yellow-700 rounded-lg text-white px-6 py-3 font-semibold transition-all duration-300 shadow-md hover:shadow-lg inline-block"
+            >
+                Maisons entre 700 000 et 4 000 000 €
+            </a>
+        </div>
+
+        <!-- Grille des offres -->
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center"
+        >
+            {offres.map((offre) => <OffreCard offre={offre} class="offre" />)}
+        </div>
     </div>
-    
 </Layout>
 
 <script>
