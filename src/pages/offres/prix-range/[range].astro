@@ -1,0 +1,20 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import OffreCard from "../../../components/OffreCard.astro";
+import { getOffresByPriceRange } from "../../../js/backend.mjs";
+
+const range = Astro.params.range;
+console.log(range);
+const [priceMin, priceMax] = range.split("-");
+
+const offres = await getOffresByPriceRange(priceMin, priceMax);
+---
+
+<Layout titre={`Maison entre ${priceMin} et ${priceMax} €`}>
+    <h1>Maisons entre {priceMin} et {priceMax} €</h1>
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center"
+    >
+        {offres.map((offre: any) => <OffreCard offre={offre} class="offre" />)}
+    </div>
+</Layout>

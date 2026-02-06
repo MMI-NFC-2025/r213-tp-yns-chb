@@ -40,3 +40,29 @@ export async function getOffresBySurface(surface) {
         return [];
     }
 }
+
+export async function getOffresByPrice(price) {
+    try {
+        const data = await db.collection('maison').getFullList({
+            filter: `Prix < ${price}`,
+            sort: '-created',
+        });
+        return data;
+    } catch (error) {
+        console.log('Une erreur est survenue en lisant la liste des maisons', error);
+        return [];
+    }
+}
+
+export async function getOffresByPriceRange(priceMin, priceMax) {
+    try {
+        const data = await db.collection('maison').getFullList({
+            filter: `Prix >= ${priceMin} && Prix <= ${priceMax}`,
+            sort: '-created',
+        });
+        return data;
+    } catch (error) {
+        console.log('Une erreur est survenue en lisant la liste des maisons', error);
+        return [];
+    }
+}

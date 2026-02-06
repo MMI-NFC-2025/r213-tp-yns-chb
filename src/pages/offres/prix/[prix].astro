@@ -1,0 +1,17 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import OffreCard from "../../../components/OffreCard.astro";
+import { getOffresByPrice } from "../../../js/backend.mjs";
+
+const prix = Astro.params.prix;
+const offres = await getOffresByPrice(prix);
+---
+
+<Layout titre={`Maisons inférieur à ${prix} €`}>
+    <h1>Maisons inférieur à {prix} €</h1>
+    <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center"
+    >
+        {offres.map((offre: any) => <OffreCard offre={offre} class="offre" />)}
+    </div>
+</Layout>
